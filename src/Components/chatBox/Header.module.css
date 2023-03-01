@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    width: 100%;
+    top: 0;
+    height: 6%;
+    margin: auto;
+    border-bottom: 2px solid black;
+    padding: 4px;
+    padding-bottom: 0.75rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    z-index: 10;   
+}
+.img{
+    width: 1.5rem;
+    height: 100%;
+    margin: 0 0.5rem;
+    margin-top: 0;
+}
+
+.img:hover{
+    transform: scale(110%);
+    cursor: pointer;
+}
+

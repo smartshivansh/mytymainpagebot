@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.bb694a48.css",
-    "main.js": "/static/js/main.79bbcf3c.js",
+    "main.css": "/static/css/main.a7e03ed8.css",
+    "main.js": "/static/js/main.569bf7f7.js",
     "static/js/787.3d6d351d.chunk.js": "/static/js/787.3d6d351d.chunk.js",
     "static/media/mytyfeed.svg": "/static/media/mytyfeed.95e62190f2c0d186310859448f6c1254.svg",
     "static/media/bussiness.svg": "/static/media/bussiness.03617fb9f8e34ad0c22406ce3fe6e968.svg",
     "static/media/personal.svg": "/static/media/personal.ac346908f139345d813add283b07c6ed.svg",
     "static/media/mytyIcon.svg": "/static/media/mytyIcon.c915a67d976277a5be2b94e1cd9b8481.svg",
     "static/media/backbtn.svg": "/static/media/backbtn.e6a1d203b6e037ca6bcf1dfdcf99a0b9.svg",
-    "static/media/sendBtn.svg": "/static/media/sendBtn.c26e63ebc8d25a9c64924e64f1758143.svg",
+    "static/media/sendBtn.svg": "/static/media/sendBtn.3f05b96e21f17c0135d918c89469192b.svg",
     "index.html": "/index.html",
     "static/media/bellicon.svg": "/static/media/bellicon.a41c0306df852da4291790b1b928fbe7.svg",
     "static/media/menu.svg": "/static/media/menu.b4f0dd452cddd37b508b8d8fa03116ca.svg",
-    "main.bb694a48.css.map": "/static/css/main.bb694a48.css.map",
-    "main.79bbcf3c.js.map": "/static/js/main.79bbcf3c.js.map",
+    "main.a7e03ed8.css.map": "/static/css/main.a7e03ed8.css.map",
+    "main.569bf7f7.js.map": "/static/js/main.569bf7f7.js.map",
     "787.3d6d351d.chunk.js.map": "/static/js/787.3d6d351d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb694a48.css",
-    "static/js/main.79bbcf3c.js"
+    "static/css/main.a7e03ed8.css",
+    "static/js/main.569bf7f7.js"
   ]
 }

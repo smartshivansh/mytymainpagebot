@@ -75,9 +75,11 @@ export default function BookLinkForm(){
                  <img src={menu} alt="menu" className={classes.img} onClick={openNotification} />
               </header>
 
-              <h1 className={classes.heading}>Book your myty link</h1>
+              <h1 className={classes.heading}>SignUp</h1>
 
               <form className={classes.form}>
+
+                <p className={classes.fromHeading}>Your are just one step away from reserving your link </p>
 
                 <input required type="text" className={classes.input} placeholder="Name" value={name} onChange={(e)=>{setName(p=>e.target.value)}} />
                 <p style={{display: `${nameError == "" ? "none" : "block"}`}}  className={classes.error}>{nameError}</p>
@@ -93,7 +95,7 @@ export default function BookLinkForm(){
                 By creating an account you are agreeing to our <a target="_blank" href="https://myty.in/terms-conditions" className={classes.links}>Terms and Conditions</a> and <a target="_blank" href="https://myty.in/privacy-policy" className={classes.links}>Privacy Policy</a>
                 </p>
 
-                <button type="submit" className={classes.button}>Submit</button>
+                <button type="submit" className={classes.button}>Book Link</button>
 
                  
               </form>

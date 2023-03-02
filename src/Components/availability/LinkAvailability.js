@@ -70,23 +70,25 @@ export default function LinkAvailability(){
                  <img src={menu} alt="menu" className={classes.img} onClick={openNotification} />
              </header>
 
+             <div className={classes.subContainer}>
              <h1 className={classes.heading}>Search the availability of your link</h1>
 
              <p className={classes.content}>Search and buy available domain names</p>
+             <p className={classes.condition}>Minimum 8 character, Only lowercase alphanumeric hyphens and underscores are allowed.</p>
 
              <form className={classes.form} onSubmit={formSubmitHandler}>
                 <input type='text' className={classes.input} placeholder="Search here" value={username} onChange={usernameHandler} />
                 <button className={classes.button}>Search</button>
              </form>
 
-             <p className={classes.condition}>
-             Only lowercase alphanumeric hyphens and underscores are allowed.
+             <p className={classes.condition} style={{marginTop: "3rem"}}>
+             Link will get approved, subjected to KYC verification
              </p>
 
              <p className={classes.error} style={{color: errorColor}}>{error}</p>
 
              <button style={{display: bookLinkDisplay}} className={classes.booklink} onClick={onclickHandler}>Book link</button>
-
+             </div>
 
               {/* menu slide */}
 

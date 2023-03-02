@@ -97,10 +97,12 @@ export default function Main(){
 
          {/* notification bar */}
 
-         <div className={classes.notification} style={{opacity: notfOpacity ,transform: notfTransform, display: notfDisplay, transition: notfTransition}}>
+         {/* //style={{opacity: notfOpacity ,transform: notfTransform, display: notfDisplay, transition: notfTransition}} */}
+
+         <div className={classes.notification} style={{opacity: notfOpacity ,transform: notfTransform, display: notfDisplay, transition: notfTransition}} >
 
             <header className={classes.notificationHeader} >
-                <img src={backBtn} className={classes.img} alt="back" onClick={closeNotification} />
+                <img src={backBtn} className={classes.img} alt="back" onClick={closeNotification} style={{transform: "rotate(180deg"}} />
                 <img src={mytyIcon} className={classes.img} alt="myty" />
             </header>
 

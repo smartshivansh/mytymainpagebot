@@ -14,7 +14,15 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
+}   
+
+.subContainer{
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    width: max-content;
+    align-self: center;
+    margin-top: 2rem;
 }
 
 .heading{
@@ -23,6 +31,7 @@
     font-weight: 700;
     font-size: 2rem;
     line-height: 3rem;
+    margin-bottom: 2rem;
 }
 
 .content{
@@ -52,9 +61,7 @@
 }
 
 .form{
-    display: flex;
     width: 100%;
-    justify-content: center;
     margin-top: 3rem;
 }
 
@@ -92,12 +99,11 @@
 }
 
 .condition{
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins';
     font-style: normal;
-    font-weight: 500;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    margin-top: 3rem;
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
 }
 
 .booklink{

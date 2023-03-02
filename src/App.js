@@ -3,6 +3,7 @@ import BookLink from "./Components/Booklink/BookLink";
 import LinkAvailability from "./Components/availability/LinkAvailability";
 import BookLinkForm from "./Components/bookLinkForm/BookLinkForm";
 import PaymentButton from "./Components/payment/Payment";
+import OtpVerification from "./Components/OtpVerification/OtpVerification";
 
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
@@ -26,6 +27,8 @@ function App() {
         <Route exact path="/booklinkform" element={<BookLinkForm />} />
 
         <Route exact path="/payment" element={<PaymentButton label={"365"} />} />
+
+        <Route exact path="/otpverify" element={<OtpVerification />} />
 
       </Routes>
     </Router>

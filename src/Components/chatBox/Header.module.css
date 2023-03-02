@@ -5,18 +5,18 @@
 }
 
 .header{
+    position: absolute;
     width: 100%;
     top: 0;
     left: 0;
     height: 8%;
     margin: auto;
     border-bottom: 2px solid black;
-    padding: 4px;
-    padding: 1rem 0;
+    padding: 1rem;
     display: flex;
-    flex-direction: row-reverse;
-    position: absolute;
-    z-index: 10;   
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
 }
 .img{
     width: 1.5rem;
@@ -28,5 +28,11 @@
 .img:hover{
     transform: scale(110%);
     cursor: pointer;
+}
+
+@media (max-width: 900px){
+    .header{
+        position: fixed;
+    }
 }
 

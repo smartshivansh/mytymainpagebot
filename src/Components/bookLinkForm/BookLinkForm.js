@@ -1,16 +1,19 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { userUpdate } from "../../store/UserSlice";
 
 import classes from "./BookLinkForm.module.css";
 
 import menu from "../../assets/menu.svg"
 import backbtn from "../../assets/backbtn.svg"
 
-import PaymentButton from "../payment/Payment";
+import Footer from "../footer/Footer";
 
-import { loadRazorpayScript } from "../payment/Payment";
-    
+import { useNavigate } from "react-router";
 
 export default function BookLinkForm(){
+
+    const dispatch = useDispatch();
 
     const [slideDisplay, setSlideDisplay] = useState("none");
     const [slideTransform, setSlideTransform] = useState("translateX(80%)")
@@ -26,7 +29,7 @@ export default function BookLinkForm(){
     const [mobile, setMobile] = useState("");
     const [accept, setAccept] = useState("");
 
-    const [paymentDisplay, setPaymentDisplay] = useState("none")
+    const navigate = useNavigate()
 
     const openNotification = () => {   
         setSlideDisplay(p => "block");
@@ -60,8 +63,29 @@ export default function BookLinkForm(){
           return;
         }
 
-        setPaymentDisplay(p=> "block")
-
+        fetch("http://localhost:8080/api/signup", {
+          method: "POST",
+          body: JSON.stringify({name, mobile, email}),
+          headers:{
+            "content-type": "application/json"
+          }
+        }).then(res => res.json())
+        .then(res => JSON.parse(res))
+        .then(res => {
+          if(res.sucess){
+            localStorage.setItem("userToken", res.users.email)
+            dispatch(userUpdate(res.users.name, res.users.email, res.users.chat, res.users.prompt, res.users.mobile))
+            navigate("/otpverify");
+          }
+          else{
+            if(res.msg=="USER ALREADY EXIST"){
+              setMobileError("Mobile No already registered")
+            }
+            else{
+              alert("Some error occured Please try again later")
+            }
+          }
+        })
         // loadRazorpayScript();
     }
 
@@ -100,11 +124,6 @@ export default function BookLinkForm(){
                  
               </form>
 
-              <div style={{display: paymentDisplay, margin: "auto"}}>
-                <PaymentButton label="Pay Now 365" callback={paymentSucessHandler} />
-              </div>
-
-
                 {/* menu slide */}
 
               <div className={classes.menuslide} style={{opacity: slideOpacity ,transform: slideTransform, display: slideDisplay, transition: slideTransition}}>
@@ -121,5 +140,7 @@ export default function BookLinkForm(){
                  </ul>
                </div>
              </div>
+
+             <Footer />
           </div>
 }

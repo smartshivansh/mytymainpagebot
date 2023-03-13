@@ -4,8 +4,11 @@ import { useNavigate } from "react-router";
 
 import classes from "./LinkAvailability.module.css"
 
+import Footer from "../footer/Footer"
+
 import menu from "../../assets/menu.svg"
 import backbtn from "../../assets/backbtn.svg"
+import xicon from "../../assets/xicon.svg"
 
 export default function LinkAvailability(){
 
@@ -20,6 +23,9 @@ export default function LinkAvailability(){
     const [errorColor, setErrorColor] = useState("")
 
     const [bookLinkDisplay, setBookLinkDisplay] = useState("none");
+
+    const [popupDisplay, setPopupDisplay] = useState("flex");
+    const [cpopupDisplay, setcPopupDisplay] = useState("none");
 
     const [username, setUsername] = useState("");
 
@@ -42,6 +48,7 @@ export default function LinkAvailability(){
     }
 
     const formSubmitHandler = (e) => {
+
         e.preventDefault();
 
         if(username.length < 8){
@@ -52,16 +59,17 @@ export default function LinkAvailability(){
 
         setBookLinkDisplay(p => "block")
         setErrorColor(p => "#10BA01");
-        setError(p => "Available")
+        setError(p => "Available");
     }
 
     function onclickHandler(){
-        navigate("/booklinkform")
+        setcPopupDisplay(p => "flex")
     }
 
     const usernameHandler = (e) => {
         setUsername(p => e.target.value)
     }
+
 
 
     return <div className={classes.container}>
@@ -87,7 +95,7 @@ export default function LinkAvailability(){
 
              <p className={classes.error} style={{color: errorColor}}>{error}</p>
 
-             <button style={{display: bookLinkDisplay}} className={classes.booklink} onClick={onclickHandler}>Book link</button>
+             <button style={{display: bookLinkDisplay}} className={classes.booklink} onClick={onclickHandler}>Apply Now</button>
              </div>
 
               {/* menu slide */}
@@ -106,6 +114,34 @@ export default function LinkAvailability(){
                  </ul>
                </div>
              </div>
+
+
+             {/* popup */}
+
+             <div className={classes.popup} style={{display: popupDisplay}}>
+
+                <div className={classes.pop}>
+                    <p>Make sure the link you are searching should have KYC.</p>
+                    <p>Only KYC approved links are available</p>
+
+                    <img className={classes.xicon} alt="close" src={xicon} onClick={()=> setPopupDisplay("none")} />
+                </div>
+             </div>
+
+             {/* Completepopup */}
+
+             <div className={classes.popup} style={{display: cpopupDisplay}}>
+
+                <div className={classes.pop}>
+                    <p>We’ve got your request.</p>
+                    <p>We will contact you later.</p>
+                    <p>After confirming that the link can be given. </p>
+
+                    <img className={classes.xicon} alt="close" src={xicon} onClick={()=> navigate("/")} />
+                </div>
+             </div>
+
+             <div className={classes.footer}><Footer /></div>
 
            </div>
 }

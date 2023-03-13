@@ -7,6 +7,7 @@ import menu from "../../assets/menu.svg"
 import backbtn from "../../assets/backbtn.svg"
 
 import classes from "./BookLink.module.css"
+import Footer from "../footer/Footer"
 
 
 export default function(){
@@ -59,5 +60,7 @@ export default function(){
             </ul>
           </div>
         </div>
+
+        <Footer />
     </div>
 }

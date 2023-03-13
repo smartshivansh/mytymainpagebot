@@ -9,7 +9,7 @@ export default function BookLinkMain(){
     const navigate = useNavigate();
 
     function onclickHandler(){
-        navigate("/available")
+        navigate("/booklinkform")
     }
 
     return <div className={classes.container}>
